@@ -9,8 +9,8 @@ namespace SocialNetwork.Services
     public class EmailSender : IEmailSender
     {
         public const string ApplicationName = "Social Network";
-        public const string ApplicationEmail = "lavishstory@gmail.com";
-        public const string ApplicationEmailPassword = "Lavishstory123";
+        public const string ApplicationEmail = "ron.garlit@gmail.com";
+        public const string ApplicationEmailPassword = "rh53e&sps550";
         public const string GmailSmtp = "smtp.gmail.com";
         public const int Port = 587;
 
@@ -19,7 +19,7 @@ namespace SocialNetwork.Services
             using (var client = new SmtpClient(GmailSmtp, Port)) // netstat -l/a ... for checking available ports
             {
                 client.EnableSsl = true;
-                client.UseDefaultCredentials = false;
+                client.UseDefaultCredentials = true;
                 client.Credentials = new NetworkCredential(ApplicationEmail, ApplicationEmailPassword);
 
                 var mailMessage = new MailMessage();
