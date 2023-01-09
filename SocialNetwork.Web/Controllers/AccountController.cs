@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using PaulMiami.AspNetCore.Mvc.Recaptcha;
 using SocialNetwork.Data;
 using SocialNetwork.Data.Entities;
 using SocialNetwork.Services;
@@ -162,7 +161,7 @@ namespace SocialNetwork.Web.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        [ValidateRecaptcha]
+        //[ValidateRecaptcha]
         public async Task<IActionResult> Register(RegisterViewModel model, string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;

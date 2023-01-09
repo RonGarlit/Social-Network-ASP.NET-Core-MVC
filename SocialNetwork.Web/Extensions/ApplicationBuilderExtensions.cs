@@ -49,7 +49,7 @@ namespace SocialNetwork.Web.Extensions
                             ProfilePicture = new byte[] {1, 2, 3}
                         };
                 
-                        await userManager.CreateAsync(adminUser, "admin123");
+                        await userManager.CreateAsync(adminUser, "Admin@123456");
                 
                         await userManager.AddToRoleAsync(adminUser, roleName);
                     }

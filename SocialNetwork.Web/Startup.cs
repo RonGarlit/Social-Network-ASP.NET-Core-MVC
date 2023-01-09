@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using PaulMiami.AspNetCore.Mvc.Recaptcha;
 using SocialNetwork.Data;
 using SocialNetwork.Data.Entities;
 using SocialNetwork.Web.Extensions;
@@ -52,17 +51,17 @@ namespace SocialNetwork.Web
                 options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
             });
 
-            services.AddRecaptcha(new RecaptchaOptions
-            {
-                SiteKey = Configuration["Recaptcha:SiteKey"],
-                SecretKey = Configuration["Recaptcha:SecretKey"]
-            });
+            //services.AddRecaptcha(new RecaptchaOptions
+            //{
+            //    SiteKey = Configuration["Recaptcha:SiteKey"],
+            //    SecretKey = Configuration["Recaptcha:SecretKey"]
+            //});
 
-            services.AddAuthentication().AddFacebook(fo =>
-            {
-                fo.AppId = Configuration["Authentication:Facebook:AppId"];
-                fo.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
-            });
+            //services.AddAuthentication().AddFacebook(fo =>
+            //{
+            //    fo.AppId = Configuration["Authentication:Facebook:AppId"];
+            //    fo.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

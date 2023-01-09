@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PaulMiami.AspNetCore.Mvc.Recaptcha;
 using SocialNetwork.Services;
 using SocialNetwork.Web.Infrastructure;
 using SocialNetwork.Web.Infrastructure.Filters;
@@ -45,7 +44,7 @@ namespace SocialNetwork.Web.Controllers
 
         [HttpPost]
         [ValidateModelState]
-        [ValidateRecaptcha]
+        //[ValidateRecaptcha]
         public IActionResult Contact(EmailModel model)
         {
             StringBuilder message = new StringBuilder();
